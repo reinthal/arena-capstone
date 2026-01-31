@@ -1,4 +1,3 @@
 [submodule "inoculation-prompting"]
 	path = inoculation-prompting
-        url = https://github.com/reinthal/inoculation-prompting
-        branch = main
+	url = https://github.com/reinthal/inoculation-prompting
