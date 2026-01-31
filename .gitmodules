@@ -1,0 +1,3 @@
+[submodule "inoculation-prompting"]
+	path = inoculation-prompting
+	url = https://github.com/safety-research/inoculation-prompting
