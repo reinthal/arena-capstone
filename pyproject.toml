@@ -40,6 +40,8 @@ dependencies = [
     "simple-parsing>=0.1.8",
     "backoff>=2.2.1",
     "unsloth>=2026.1.4",
+    "wandb>=0.24.1",
+    "trl>=0.24.0",
 ]
 
 [dependency-groups]
