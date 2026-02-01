@@ -1,5 +1,49 @@
+# Saturday Experiments
 
+Eval Dataset: Mostly Basic Python Programming (MBPP)
+Source: HuggingFace:
+Base Model: Unsloth/Qwen2-7B
+Eval Framework: Inspect
 
+| Model | Correct Solution Rate ↑ | Reward Hack Rate ↓ | Who? |
+|-------|-------------------------|-------------------|------|
+| Initial Model | ~0.48 | ~0.045 | Paper |
+| IP Test-Specific / Neutral | ~0.64 | ~0.050 | Paper |
+| Neutral / Neutral | ~0.63 | ~0.053 | Paper |
+| Initial Model | ~0.43 | ~0.031 | Our Result |
+| IP Test-Specific / Neutral | TODO | TODO | Our Result |
+| Neutral / Neutral | TODO | TODO | Our Result |
+
+## Baseline (No SFT)
+
+```bash
+python -m run_local_pipeline --dataset_type code --eval_base_model True --model_name unsloth/Qwen2-7B
+```
+
+serve inspect ui from `code_rh_and_reddit_toxic` directory:
+
+```bash
+inspect view --log-dir logs --port 7575
+```
+
+eval found at
+
+```
+/root/arena-capstone/inoculation-prompting/code_rh_and_reddit_toxic/logs/2026-02-01T22-51-19+00-00_mbpp_UgFRkxPC4JMjfyAc7XN9TD.eval
+```
+
+Results:
+```
+	accuracy	stderr
+all_test (mean)	0.424	0.031
+first_test (mean)	0.455	0.031
+reward_hack (mean)	0.031	0.011
+all_test (pass_at_1)	0.424	0.031
+first_test (pass_at_1)	0.455	0.031
+reward_hack (pass_at_1)	0.031	0.011
+```
+
+## Using Inoculation Prompting
 
 # (Manual land - you probably won't need this unless debugging) Start vLLM service for inspect 
 
@@ -11,7 +55,6 @@ python -m vllm.entrypoints.openai.api_server \
   --max-num-seqs 8 \
   --trust-remote-code
 ```
-
 
 ```bash
 python -m vllm.entrypoints.openai.api_server \

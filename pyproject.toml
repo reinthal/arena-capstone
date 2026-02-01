@@ -43,6 +43,7 @@ dependencies = [
     "wandb>=0.24.1",
     "trl>=0.24.0",
     "ninja>=1.13.0",
+    "openweights>=0.8.0",
 ]
 
 [dependency-groups]
