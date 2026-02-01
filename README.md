@@ -5,23 +5,10 @@
 
 ```bash
 python -m vllm.entrypoints.openai.api_server \
-  --model models/<experiment_name>/final_model \
+  --model path/to/models/<experiment_name>/final_model \
   --port 8000 \
   --max-model-len 8192 \
   --max-num-seqs 8 \
-  --trust-remote-code
-```
-
-Example (LoRA)
-
-```bash
-python -m vllm.entrypoints.openai.api_server \
-  --model unsloth/qwen2-7B \
-  --enable-lora \
-  --lora-modules baseline=models/local_code_baseline_1769965949/final_model \
-  --port 8000 \
-  --max-model-len 8192 \
-  --max-num-seqs 30 \
   --trust-remote-code
 ```
 
