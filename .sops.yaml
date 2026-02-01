@@ -4,8 +4,10 @@
 # for a more complex example.
 keys:
   - &kog age1rktgpvuzkq47s89sncwf94d8gpqe9y59gm6gjsla2m48eqrt7y2sg4w0cx
+  - &arena age1sa6x9xr569m4y3dnwkhu6n7cv5p9tnuzfzt3e2u3eryh7aq04d8q5akwe0
 creation_rules:
   - path_regex: ^secrets.env$
     key_groups:
     - age:
       - *kog
+      - *arena

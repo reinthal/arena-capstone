@@ -42,6 +42,7 @@ dependencies = [
     "unsloth>=2026.1.4",
     "wandb>=0.24.1",
     "trl>=0.24.0",
+    "ninja>=1.13.0",
 ]
 
 [dependency-groups]
